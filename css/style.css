@@ -57,7 +57,7 @@ p {
 	padding: 10px 30px;
 	color: white;
 	background-color: transparent;
-	border: 2px solid #D98F89;
+	border: 2px solid #00B2CA;
 	font-size: 2rem;
 	text-transform: uppercase;
 	letter-spacing: 0.1rem;
@@ -67,7 +67,7 @@ p {
 }
 .cta:hover {
 	color: white;
-	background-color: #D98F89;
+	background-color: #00B2CA;
 }
 .brand h1 {
 	font-size: 3rem;
@@ -75,7 +75,7 @@ p {
 	color: white;
 }
 .brand h1 span {
-	color: #D98F89;
+	color: #00B2CA;
 }
 
 /* Header section */
@@ -147,7 +147,7 @@ p {
 	letter-spacing: initial;
 }
 #header .nav-list ul li:hover a {
-	color: #D98F89;
+	color: #00B2CA;
 }
 #header .hamburger {
 	height: 60px;
@@ -769,7 +769,7 @@ error-hint{
 }
 
 .btn:hover{
-    background: #D98F89;
+    background: #00B2CA;
     color: #ffeeff;
 }
 
@@ -819,7 +819,7 @@ error-hint{
 	width: 80px;
 	height: 30px;
 	border: none;
-	background-color: #D98F89;
+	background-color: #00B2CA;
 }
 
 /* End of Blog */
@@ -836,11 +836,11 @@ error-hint{
 	position: relative;
 }
  #like-btn .btns{
-	color: #D98F89;
+	color: #00B2CA;
 }
 .comment-container::before{
 	content: "";
-	background-color: #D98F89;
+	background-color: #00B2CA;
 	position:absolute;
 	min-height: 100%;
 	width: 1px;
@@ -945,7 +945,7 @@ margin-bottom: 1rem;
 }
 @keyframes text_reveal_name {
 	100% {
-		color: #D98F89;
+		color: #00B2CA;
 		font-weight: 500;
 	}
 }
@@ -1009,7 +1009,7 @@ margin-bottom: 1rem;
 		top: 34px;
 		height: 98%;
 		width: 98%;
-		border: 10px solid #D98F89;
+		border: 10px solid #00B2CA;
 	}
 	#about .col-right {
 		text-align: left;
