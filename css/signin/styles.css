@@ -1,0 +1,83 @@
+body{
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	font-family: 'Montserrat', sans-serif;
+	background: #2B2929;
+	
+}
+a{
+	text-decoration: none;
+	text-align: center;
+	padding-top: 10px;
+}
+.main{
+	width: 550px;
+	height: 600px;
+	background: #384A49;
+	overflow: hidden;	
+	border-radius: 10px;
+	box-shadow: 5px 20px 50px #000;
+}
+
+label{
+	color: #fff;
+	font-size: 2.3em;
+	justify-content: center;
+	display: flex;
+	margin: 60px;
+	font-weight: bold;
+	cursor: pointer;
+	transition: .5s ease-in-out;
+}
+input{
+	width: 60%;
+	height: 25px;
+	background: #e0dede;
+	justify-content: center;
+	display: flex;
+	margin:auto;
+	padding: 10px;
+	border: none;
+	outline: none;
+	border-radius: 5px;
+}
+.name{
+	position: relative;
+	margin-top: 50px;
+}
+.pass{
+	margin-top: 50px;
+}
+.button{
+	width: 60%;
+	height: 30px;
+	margin: 50px auto;
+	justify-content: center;
+	display: flex;
+	color: #fff;
+	background: #D98F89;
+	font-size: 1em;
+	font-weight: bold;
+	outline: none;
+	border: none;
+	border-radius: 5px;
+	transition: .2s ease-in;
+	cursor: pointer;
+}
+button:hover{
+	background: #2B2929;
+}
+.email_error, .password_error{
+	/* justify-content: center; */
+	display:flex;
+	width: 200px;
+	margin-left: 100px;
+	color: #c62828;
+	margin-top: 5px;
+	margin-bottom: 20px;
+	/* display: none; */
+}

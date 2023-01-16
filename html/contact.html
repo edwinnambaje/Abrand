@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <section id="header">
+        <div class="header container">
+          <div class="nav-bar">
+            <div class="brand">
+              <a href="#hero">
+                <h1><span>Ed</span>Win</h1>
+              </a>
+            </div>
+            <div class="nav-list">
+              <div class="hamburger">
+                <div class="bar"></div>
+              </div>
+              <ul>
+                <li><a href="../index.html" data-after="Home">Home</a></li>
+                <li><a href="blog.html" data-after="blogs">Blogs</a></li>
+                <li><a href="#about" data-after="About">About</a></li>
+                <li><a href="contact.html" data-after="Contact">Contact</a></li>
+                <li><a href="signin.html" data-after="SignUp">Signin</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    <section id="contact" class="contact">
+        <div class="contact-items">  
+            <div class="contact-info"><h1>Get In Touch With Me</h1>  
+            
+              <div class="contact-form">
+                <div id="contact-form">
+                  <div class="form-control">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="sender-name" placeholder="Enter Your Full Name" class="input-field " />
+                  </div>
+                  <div class="name_error"> </div>
+                  <div class="form-control">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="sender-email" placeholder="Enter Your Email" class="input-field "/>
+                  </div>
+                  <div class="email_error"> </div>
+                  <div class="form-control">
+                    <label for="message">Message</label>
+                    <textarea id="message" cols="70" rows="10" placeholder="Enter Your Message" name="message" class="input-field"></textarea>
+                  </div>
+                  <div class="message_error"> </div>
+                  <div class="submit-button"><input type="submit" value="Submit" id="submit-btn" class="submit-btn"/></div>
+                </div>
+              </div>
+          </div>
+  
+          </div>
+  
+        </div>
+      </div>
+      </section>
+      <script src="../js/contact-validation.js"></script>
+      <script src="../js/sweetalert.js"></script>
+</body>
+</html>
