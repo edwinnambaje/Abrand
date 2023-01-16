@@ -27,7 +27,7 @@ body {
 }
 
 .logo span {
-    color: #D98F89;
+    color: '#00B2CA';
 }
 
 /* .profile {
@@ -107,12 +107,12 @@ a {
 
 .sidebar--items a:hover,
 .sidebar--bottom-items a:hover {
-    background-color: #D98F89;
+    background-color: '#00B2CA';
     color: #fff;
 }
 
 #active--link {
-    background-color: #D98F89;
+    background-color: '#00B2CA';
     color: #fff;
 }
 
@@ -254,7 +254,7 @@ a {
     padding: 5px 10px;
     outline: none;
     border: none;
-    background-color: #D98F89;
+    background-color: '#00B2CA';
     color: #fff;
     border-radius: 5px;
     cursor: pointer;
