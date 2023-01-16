@@ -255,7 +255,7 @@ p {
 	left: 0;
 	height: 100%;
 	width: 0;
-	background-color: #D98F89;
+	background-color: '##00B2CA';
 	animation: text_reveal_box 1s ease;
 	animation-delay: 0.5s;
 }
@@ -575,10 +575,10 @@ textarea{
 #submit-btn {
 	display: flex;
 	justify-content:center ;
-	background-color: #D98F89;
+	background-color: '##00B2CA';
 	justify-content: center;
 	width: 70%;
-	border: .5px solid#D98F89;
+	border: .5px solid '##00B2CA';
 	height: 30px;
 	transition: width 0.4s ease-in-out;
 	}
@@ -761,9 +761,9 @@ error-hint{
     padding: 0.8rem 2rem;
 	align-items: center;
     font-size: 1.2rem;
-    border: 0.1rem solid #D98F89;
-    background: #ffeeff;
-    color: #D98F89;
+    border: 0.1rem solid '##00B2CA';
+    background: '#ffeeff';
+    color: '##00B2CA';
     cursor: pointer;
     text-transform: capitalize;
 }
