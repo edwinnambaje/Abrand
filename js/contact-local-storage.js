@@ -29,7 +29,23 @@ if(!isLoggedIn && !accessToken){
             row.appendChild(d1)
             row.appendChild(d2)
             row.appendChild(d3)
+            row.appendChild(deleteicon)
             tbody.appendChild(row)
+            deleteicon.addEventListener('click', ()=>{
+                fetch(`http://localhost:3000/api/messages/delete/${result[i]._id}`, {
+                    method: 'DELETE',
+                    headers: {   
+                        'Authorization': `Bearer ${JSON.parse(localStorage.getItem('mora'))}`,
+                        'Content-Type': "application/json",
+                    }, 
+                })
+                .then((res) => res.json())
+                .then((data) => {
+                    location.reload()
+                })
+                .catch(error => console.error(error));
+    
+            })
             
             }
     })
