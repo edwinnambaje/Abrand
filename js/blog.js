@@ -1,9 +1,6 @@
 
-// render blogs
-
-const articles = JSON.parse(localStorage.getItem('articles')) ? JSON.parse(localStorage.getItem('articles')) : []
-
 const renderArticles = (articles) => {
+
     const box_container = document.querySelector('.box-container');
     box_container.innerHTML = ''
     for (const article of articles) {
@@ -12,11 +9,11 @@ const renderArticles = (articles) => {
         box.setAttribute('class', 'box shadow')
         const id= document.createElement('span')
         id.setAttribute('class','hidden')    
-        id.textContent=article.id
+        id.textContent=article._id
         const imgDiv = document.createElement('div')
         imgDiv.setAttribute('class', 'image')
         const img = document.createElement('img')
-        img.setAttribute('src', article.picture)
+        img.setAttribute('src', article.image)
         const h3Likes = document.createElement('h3')
         const icon = document.createElement('i')
         icon.setAttribute('class', 'fas fa-heart')
@@ -29,10 +26,10 @@ const renderArticles = (articles) => {
         const h3Content = document.createElement('h3')
         h3Content.textContent = article.title
         const p = document.createElement('p')
-        p.textContent= article.description
+        p.textContent= article.desc
         const anchor = document.createElement('a')
         anchor.setAttribute('class', 'btn')
-        anchor.setAttribute('href', './viewblog.html?id='+article.id)
+        anchor.setAttribute('href', './viewblog.html?id='+article._id)
         anchor.textContent = 'read more'
         content.appendChild(h3Content)
         content.appendChild(p)
@@ -43,5 +40,8 @@ const renderArticles = (articles) => {
         box_container.appendChild(box)
     }
 }
-
-renderArticles(articles)
+fetch("https://brand-acqz.onrender.com/api/posts/all")
+.then((res)=>res.json())
+.then((data)=>{
+    renderArticles(data)
+})

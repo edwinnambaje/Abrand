@@ -1,28 +1,41 @@
-localStorage.setItem('admin', JSON.stringify({email: "admin@portfolio.me", password: 'Password@1234'}));
 const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
 const passwordRegex= /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
 let isEmailValid = false
 let isPasswordValid = false
 
 let formError = document.querySelector(".form_error")
-
+const url = 'http://localhost:3000/api/auth/login'
 document.querySelector('#form_login').addEventListener('submit', (e) => {
     e.preventDefault()
     const email= e.target.elements['email'].value;
     const password= e.target.elements['password'].value;
-    const adminCredential = JSON.parse(localStorage.getItem('admin'))
+    const loginData = {
+        email: email,
+        password: password
+    }
     if(isEmailValid && isPasswordValid){
-        if (adminCredential.email === email && adminCredential.password === password) {
-            console.log('success');
-            localStorage.setItem("isLoggedIn", JSON.stringify(true))
-            window.location.assign('../html/dashboard.html')
-        } else {
-
-            formError.textContent = "Invalid Credential"
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(loginData)
+        })
+        .then((response) => response.json())
+        .then((data) => {
+                const accessToken = data.token; 
+                console.log(accessToken)
+                localStorage.setItem('mora', JSON.stringify(accessToken))
+                localStorage.setItem("isLoggedIn", JSON.stringify(true))
+                window.location.assign('../html/dashboard.html')
+        })
+        .catch((error) => {
+            console.error('Error:', error.message);
+            formError.textContent = error.message
             setTimeout(() => {
                 formError.textContent = ""
             }, 5000)
-        }
+        });
     }
 });
 
@@ -58,4 +71,3 @@ document.getElementById('input_password').addEventListener('input', (e) => {
         passwordError.textContent = " Password is Invalid";
     }
 })
-

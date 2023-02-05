@@ -1,19 +1,13 @@
 
-{/* <tr>
-    <td>Why Lead Generation is Key for Business Growth</td>
-    <td>30/07/2022</td>
-    <td>12</td>
-    <td><span><i class="ri-edit-line edit"></i><i class="ri-delete-bin-line delete"></i></span></td>
-</tr>  */}
-
-const article = JSON.parse(localStorage.getItem('articles'));
-
+fetch("https://brand-acqz.onrender.com/api/posts/all")
+.then((res)=>res.json())
+.then((article)=>{
 let tbody= document.querySelector('tbody')
 for(let i=0;i<article.length;i++){
     const  row = document.createElement("tr")
     const id= document.createElement('td')
     id.setAttribute('class','hidden')
-    id.textContent= article[i].id
+    id.textContent= article[i]._id
     const d1 = document.createElement("td")
     d1.textContent=article[i].title
     const d2 = document.createElement("td")
@@ -24,7 +18,7 @@ for(let i=0;i<article.length;i++){
     const span=document.createElement("span")
     const editicon=document.createElement('i')
     editicon.setAttribute('class','ri-edit-line edit')
-    editicon.setAttribute('id', article[i].id)
+    editicon.setAttribute('id', article[i]._id)
     editicon.addEventListener('click', (e) => {
         console.log(e.target.id)
         location.assign(`../html/addblog.html#${e.target.id}`)
@@ -48,10 +42,9 @@ for(let i=0;i<article.length;i++){
     let filteredBlogs = article.filter(a =>{
     return a.id !== dltid
     })
-
-    localStorage.setItem('articles', JSON.stringify(filteredBlogs))
     location.reload()
 })
 }
+})
 
 

@@ -61,7 +61,7 @@
                     <h2 class="section--title">Add Blogs</h2>
                 </div>
                 <div class="table">
-                    <form id="add-blog" action="#" method="post" class="table">
+                    <form id="add-blog" action="#" method="post" class="table" enctype="application/json">
                         <label for="title" class="">Title</label><br>
                         <input class="blog-title" type="text" name="title" placeholder="Enter the title" ><br>
                         <div class="title_error"></div>
@@ -70,8 +70,10 @@
                         <div id="froala"></div>
                         <textarea name="editor1" id="description" cols="60" rows="20" required></textarea><br>
                         <div class="description_error"></div>
-                        <div class="file_input_div">
-                            <input type="file" name="picture" id="picture" class="custom-file-input" >
+                        <!-- <input type="file" name="image" id="picture" class="custom-file-input" >
+                        --><div class="file_input_div">
+                            <label for="image">image</label>
+                            <input type="file" name="image" id="picture" class="custom-file-input"/>
                         </div>
                         <button type="submit" class="add"></i></button>    
                     </form>
