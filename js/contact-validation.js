@@ -13,21 +13,21 @@ const query={
     message: message.value
 };
 
-if(name == ""){
+if(query.username == ""){
     Swal.fire(
         'Opps..!',
         'Name is Empty!',
         'error'
     );
 }
-else if(Email == ""){
+else if(query.email == ""){
     Swal.fire(
         'Opps..!',
         'Email is Empty!',
         'error'
     );
 }
-else if(message == ""){
+else if(query.message == ""){
     Swal.fire(
         'Opps..!',
         'Message is Empty!',
