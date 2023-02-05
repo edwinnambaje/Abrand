@@ -3,12 +3,15 @@ let submitBtn = document.querySelector('.submit-btn');
 
 submitBtn.addEventListener('click', ()=>{
 // inputs
-
-let name = document.getElementById('name').value;
-let Email = document.getElementById('email').value;
-let message = document.getElementById('message').value;
-
-let contact = JSON.parse(localStorage.getItem('queries')) || [];
+let name = document.getElementById('name');
+let Email = document.getElementById('email');
+let message = document.getElementById('message');
+const url='http://localhost:3000/api/messages/create';
+const query={
+    username: name.value ,
+    email: Email.value,
+    message: message.value
+};
 
 if(name == ""){
     Swal.fire(
@@ -33,8 +36,18 @@ else if(message == ""){
 }
 else
 {
-    contact.push({name,Email,message });
-    localStorage.setItem('queries', JSON.stringify(contact));
+    fetch(url, {
+        method: 'POST',
+        headers: {
+            Accept: 'application.json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(query)
+    })
+    .then((response) => response.json())
+    .then((data) => {
+        console.log(data)
+    })
      Swal.fire(
             'Good job!',
             'Message Sent!',
