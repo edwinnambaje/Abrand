@@ -4,7 +4,7 @@ if(!isLoggedIn && !accessToken){
     window.location.assign('/html/signin.html')
 }
 
-    fetch('http://localhost:3000/api/user',{
+    fetch('https://brand-acqz.onrender.com/api/user',{
         method: 'GET',
         headers: {
             'Authorization': `Bearer ${JSON.parse(localStorage.getItem('mora'))}`,

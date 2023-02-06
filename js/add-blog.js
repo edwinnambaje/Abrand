@@ -16,7 +16,7 @@ document.querySelector('#picture').addEventListener('change', function () {
     })
 })
 
-fetch('http://localhost:3000/api/posts/all')
+fetch('https://brand-acqz.onrender.com/api/posts/all')
         .then((res) => res.json())
         .then((data) => {
              const articles =data
@@ -83,7 +83,7 @@ document.querySelector('#add-blog').addEventListener('submit', (e) => {
    
     if (isInEditMode) {
 
-        const url=`http://localhost:3000/api/posts/update/${articleId}`
+        const url=`https://brand-acqz.onrender.com/api/posts/update/${articleId}`
 
         fetch(url, {
             method: 'PUT',
@@ -103,7 +103,7 @@ document.querySelector('#add-blog').addEventListener('submit', (e) => {
         .catch(error => console.error(error));
         
     } else {
-        const url= 'http://localhost:3000/api/posts'
+        const url= 'https://brand-acqz.onrender.com/api/posts'
 
         fetch(url, {
             method: 'POST',

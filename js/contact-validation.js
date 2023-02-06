@@ -6,7 +6,7 @@ submitBtn.addEventListener('click', ()=>{
 let name = document.getElementById('name');
 let Email = document.getElementById('email');
 let message = document.getElementById('message');
-const url='http://localhost:3000/api/messages/create';
+const url='https://brand-acqz.onrender.com/api/messages/create';
 const query={
     username: name.value ,
     email: Email.value,

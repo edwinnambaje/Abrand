@@ -4,7 +4,7 @@ if(!isLoggedIn && !accessToken){
     window.location.assign('/html/signup.html')
 }
 
-fetch('http://localhost:3000/api/posts/all')
+fetch('https://brand-acqz.onrender.com/api/posts/all')
       .then((res) => res.json())
       .then((data) => {
         result = data
@@ -45,7 +45,7 @@ fetch('http://localhost:3000/api/posts/all')
             
 
             deleteicon.addEventListener('click', ()=>{
-            fetch(`http://localhost:3000/api/posts/delete/${result[i]._id}`, {
+            fetch(`https://brand-acqz.onrender.com/api/posts/delete/${result[i]._id}`, {
                 method: 'DELETE',
                 headers: {   
                     'Authorization': `Bearer ${JSON.parse(localStorage.getItem('mora'))}`,
