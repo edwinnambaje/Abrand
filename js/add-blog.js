@@ -96,9 +96,9 @@ document.querySelector('#add-blog').addEventListener('submit', (e) => {
         .then((response) => response.json())
         .then((data) => {
             console.log(data);
-                location.reload()
                 alert('Blog updated Successfully')
-                location.assign(`/html/viewblog.html?id=${articleId}`)
+                // window.history.back()
+                 location.assign(`/html/viewblog.html?id=${articleId}`)
             })
         .catch(error => console.error(error));
         
@@ -120,9 +120,6 @@ document.querySelector('#add-blog').addEventListener('submit', (e) => {
                 location.assign(`/html/viewblog.html?id=${data._id}`)
             })
         .catch(error => console.error(error));
-        // const existingArticle = JSON.parse(localStorage.getItem('articles'))
-        // existingArticle.push(newData)
-        // localStorage.setItem('articles', JSON.stringify(existingArticle))
         
     }
     // e.target.elements['title'].value = ""
