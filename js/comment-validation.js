@@ -34,8 +34,8 @@ document.querySelector('#comment-form').addEventListener('submit', (event) => {
     .then((data) => {
         console.log(data);
         // if(data.message === 'comment added') {
-        //     location.reload()
-        alert('Comment Added Successfully')
+            alert('Comment Added Successfully')
+               location.reload()
         // } else {
         //     throw new Error(data.message)
         // }

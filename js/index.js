@@ -2,7 +2,7 @@ const showContainers = document.querySelectorAll(".show-replies");
 
 showContainers.forEach((btn) =>
   btn.addEventListener("click", (e) => {
-    let parentContainer = e.target.closest(".comment__container");
+    let parentContainer = e.target.closest(".comments-container");
     let _id = parentContainer.id;
     if (_id) {
       let childrenContainer = parentContainer.querySelectorAll(

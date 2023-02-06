@@ -20,6 +20,7 @@ const renderArticle = (article) => {
         comments = comments + `<h3>${comment.name}</h3><p>${comment.comment}</p>
         <hr>`
     }
+    console.log(article.comments)
     document.querySelector('.comments').innerHTML = comments
 }
 
@@ -37,22 +38,21 @@ fetch(apiUrl, {
     console.error('Error:', error.message);
 });
 
-
-//like 
-// const likeButton = document.querySelector('#like-btn');
-// likeButton.addEventListener('click', () =>{
-// fetch(`http://localhost:3000/api/posts/${id}/like`, {
-//     method: 'POST',
-//     headers: {
-//         'Content-Type': 'application/json',
-//     },
-// })
-// .then((response) => response.json())
-// .then((data) => {
-//     console.log(data);
-// })
-// .catch((error) => {
-//     console.error('Error:', error.message);
-// });
-// })
+const likeButton = document.querySelector('#like-btn');
+likeButton.addEventListener('click', () =>{
+fetch(`https://brand-acqz.onrender.com/api/posts/${id}/like`, {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+    },
+})
+.then((response) => response.json())
+.then((data) => {
+    console.log(data);
+    location.reload();
+})
+.catch((error) => {
+    console.error('Error:', error.message);
+});
+})
 
