@@ -1,7 +1,7 @@
 let url=location.href
 let id= url.split('=')[1]
 
-const apiUrl = `http://localhost:3000/api/posts/${id}`;
+const apiUrl = `https://brand-acqz.onrender.com/api/posts/${id}`;
 
 const renderArticle = (article) => {
     document.querySelector('.box-container').innerHTML = `

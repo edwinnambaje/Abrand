@@ -24,19 +24,15 @@ if(!isLoggedIn && !accessToken){
             const editicon=document.createElement('i')
             d1.innerText = result[i].username;
             d2.innerText = result[i].email;
-            // d3.innerText = result[i].message;
             deleteicon.setAttribute('class','ri-delete-bin-line delete')
-            // editicon.setAttribute('class','ri-edit-line edit')
-            // editicon.setAttribute('id', result[i]._id)
             let  row = document.createElement("tr")
             row.appendChild(d1)
             row.appendChild(d2)
             row.appendChild(d3)
             row.appendChild(deleteicon)
-           // row.appendChild(editicon)
             tbody.appendChild(row)
             deleteicon.addEventListener('click', ()=>{
-                fetch(`http://localhost:3000/api/user/delete/${result[i]._id}`, {
+                fetch(`https://brand-acqz.onrender.com/api/user/delete/${result[i]._id}`, {
                     method: 'DELETE',
                     headers: {   
                         'Authorization': `Bearer ${JSON.parse(localStorage.getItem('mora'))}`,

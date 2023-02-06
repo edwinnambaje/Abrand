@@ -4,7 +4,7 @@ if(!isLoggedIn && !accessToken){
     window.location.assign('/html/signup.html')
 }
 
-    fetch('http://localhost:3000/api/messages',{
+    fetch('https://brand-acqz.onrender.com/api/messages',{
         method: 'GET',
         headers: {
             'Authorization': `Bearer ${JSON.parse(localStorage.getItem('mora'))}`,
@@ -32,7 +32,7 @@ if(!isLoggedIn && !accessToken){
             row.appendChild(deleteicon)
             tbody.appendChild(row)
             deleteicon.addEventListener('click', ()=>{
-                fetch(`http://localhost:3000/api/messages/delete/${result[i]._id}`, {
+                fetch(`https://brand-acqz.onrender.com/api/messages/delete/${result[i]._id}`, {
                     method: 'DELETE',
                     headers: {   
                         'Authorization': `Bearer ${JSON.parse(localStorage.getItem('mora'))}`,
