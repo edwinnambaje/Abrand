@@ -26,14 +26,14 @@ if(!isLoggedIn && !accessToken){
             d2.innerText = result[i].email;
             // d3.innerText = result[i].message;
             deleteicon.setAttribute('class','ri-delete-bin-line delete')
-            editicon.setAttribute('class','ri-edit-line edit')
-            editicon.setAttribute('id', result[i]._id)
+            // editicon.setAttribute('class','ri-edit-line edit')
+            // editicon.setAttribute('id', result[i]._id)
             let  row = document.createElement("tr")
             row.appendChild(d1)
             row.appendChild(d2)
             row.appendChild(d3)
             row.appendChild(deleteicon)
-            row.appendChild(editicon)
+           // row.appendChild(editicon)
             tbody.appendChild(row)
             deleteicon.addEventListener('click', ()=>{
                 fetch(`http://localhost:3000/api/user/delete/${result[i]._id}`, {
