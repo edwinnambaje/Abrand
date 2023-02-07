@@ -21,6 +21,8 @@ fetch('https://brand-acqz.onrender.com/api/posts/all')
             d2.textContent=result[i].created_date
             const d3 = document.createElement("td")
             d3.textContent=result[i].likes
+            const d5 = document.createElement("td")
+            d5.textContent=result[i].comments.length
             const d4 = document.createElement("td")
             const span=document.createElement("span")
             const editicon=document.createElement('i')
@@ -40,6 +42,7 @@ fetch('https://brand-acqz.onrender.com/api/posts/all')
             row.appendChild(d1)
             row.appendChild(d2)
             row.appendChild(d3)
+            row.appendChild(d5)
             row.appendChild(d4)
             tbody.appendChild(row)  
             

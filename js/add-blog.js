@@ -48,41 +48,10 @@ document.querySelector('#add-blog').addEventListener('submit', (e) => {
     formData.append("title", title.value);
     formData.append("desc", desc.value);
     formData.append("image", image.files[0] );
-    
-    // console.log(title);
-    // console.log(desc);
-    // console.log(image);
-    //Validation
-    // const title = e.target.elements['title'].value;
-    // const description = e.target.elements['description'].value;
-    //     if (title.match(textRegex)) {
-    //     document.querySelector(".title_error").textContent = ""
-    //     console.log(title)
-        
-    // } else if(title.length == 0){
-    //     document.querySelector(".title_error").textContent = "Enter The title"
-    // }else{
-    //     document.querySelector(".title_error").textContent = "Title is Invalid"
-    // }
-
-    //     if (description.length-required>0) {
-    //     document.querySelector(".description_error").textContent = ""
-    //     console.log(description)
-        
-    // } else if(description.length==0){
-    //     document.querySelector(".description_error").textContent = "Enter your description, Minimum 100 characters "
-    // } else {
-    //     document.querySelector(".description_error").textContent = " description is Invalid, Minimum 100 characters";
-    // }
-    //Add blog to dashboard
-
-    // const date = Date.parse(new Date());
-    // console.log(date)
     let data
     const isInEditMode = articleId.length !== 0
    
     if (isInEditMode) {
-
         const url=`https://brand-acqz.onrender.com/api/posts/update/${articleId}`
 
         fetch(url, {
@@ -115,14 +84,10 @@ document.querySelector('#add-blog').addEventListener('submit', (e) => {
         .then((response) => response.json())
         .then((data) => {
             console.log(data)
-                // location.reload()
-                alert('Blog Created Successfully')
-                location.assign(`/html/viewblog.html?id=${data._id}`)
+            alert('Blog Created Successfully')
+            location.reload()
             })
         .catch(error => console.error(error));
         
     }
-    // e.target.elements['title'].value = ""
-    // e.target.elements['desc'].value = ""
-    // e.target.elements['image'].value = ""
 })
