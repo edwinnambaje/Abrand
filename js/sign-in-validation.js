@@ -25,9 +25,22 @@ document.querySelector('#form_login').addEventListener('submit', (e) => {
         .then((data) => {
                 const accessToken = data.token; 
                 console.log(accessToken)
+                console.log(data)
+                if(data.status === "success"){
                 localStorage.setItem('mora', JSON.stringify(accessToken))
                 localStorage.setItem("isLoggedIn", JSON.stringify(true))
+                // alert(data.status);
+                if(data.data.role === "admin"){
                 window.location.assign('../html/dashboard.html')
+                }
+                else{
+                    history.go(-1)
+                }
+            }
+                else{
+                    alert(data.error)
+                    location.reload()
+                }
         })
         .catch((error) => {
             console.error('Error:', error.message);

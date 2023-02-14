@@ -1,9 +1,13 @@
 const accessToken = localStorage.getItem('mora')
 const isLoggedIn = localStorage.getItem('isLoggedIn')
 if(!isLoggedIn && !accessToken){
-    window.location.assign('/html/signup.html')
+    window.location.assign('/html/signin.html')
 }
-
+const logout = document.querySelector(".logout");
+logout.addEventListener("click", () => {
+  localStorage.removeItem("mora");
+  window.location.replace("./../index.html");
+});
 fetch('https://brand-acqz.onrender.com/api/posts/all')
       .then((res) => res.json())
       .then((data) => {

@@ -6,7 +6,6 @@ body{
 	align-items: center;
 	min-height: 100vh;
 	font-family: 'Montserrat', sans-serif;
-	background: #2B2929;
 	
 }
 a{
@@ -16,11 +15,12 @@ a{
 }
 .main{
 	width: 550px;
-	height: 600px;
+	height: 500px;
 	background: #384A49;
 	overflow: hidden;	
 	border-radius: 10px;
 	box-shadow: 5px 20px 50px #000;
+	margin-top: 120px;
 }
 
 label{
