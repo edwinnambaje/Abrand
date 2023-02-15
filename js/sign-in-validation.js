@@ -13,6 +13,21 @@ document.querySelector('#form_login').addEventListener('submit', (e) => {
         email: email,
         password: password
     }
+    if(loginData.email === ""){
+        Swal.fire(
+            'Opps..!',
+            'Email is Empty!',
+            'error'
+        );
+    }
+    else if(loginData.password === ""){
+        Swal.fire(
+            'Opps..!',
+            'Password is Empty!',
+            'error'
+        );
+    }
+    else{
     if(isEmailValid && isPasswordValid){
         fetch(url, {
             method: 'POST',
@@ -38,6 +53,14 @@ document.querySelector('#form_login').addEventListener('submit', (e) => {
                 }
             }
                 else{
+                    Swal.fire(
+                        'Opps..!',
+                        'Password is Empty!',
+                        data
+                    );
+                    setTimeout(()=>{
+                        location.reload();
+                        },4000)
                     alert(data.error)
                     location.reload()
                 }
@@ -50,6 +73,7 @@ document.querySelector('#form_login').addEventListener('submit', (e) => {
             }, 5000)
         });
     }
+ }
 });
 
 let emailError = document.querySelector(".email_error");
