@@ -41,30 +41,34 @@ document.querySelector('#form_login').addEventListener('submit', (e) => {
                 const accessToken = data.token; 
                 console.log(accessToken)
                 console.log(data)
-                if(data.status === "success"){
+                if(data.data.role === "admin"){
                 localStorage.setItem('mora', JSON.stringify(accessToken))
                 localStorage.setItem("isLoggedIn", JSON.stringify(true))
-                // alert(data.status);
-                if(data.data.role === "admin"){
-                window.location.assign('../html/dashboard.html')
+                Swal.fire(
+                    'Good job!',
+                    'Successfully Logged in as an Admin!',
+                    'success'
+                );
+                setTimeout(()=>{
+                    location.replace('../html/dashboard.html')
+                    },4000)
                 }
-                else{
-                    history.go(-1)
-                }
-            }
-                else{
+                else if(data.data.role === "user"){
+                    localStorage.setItem('mora', JSON.stringify(accessToken))
                     Swal.fire(
-                        'Opps..!',
-                        'Password is Empty!',
-                        data
+                        'Good job!',
+                        'Successfully Logged in as a User!',
+                        'success'
                     );
                     setTimeout(()=>{
-                        location.reload();
+                        location.replace('../html/logg.html')
                         },4000)
-                    alert(data.error)
-                    location.reload()
-                }
-        })
+                    }
+                else{
+                        alert(data.error)
+                        location.reload()
+                 }
+            })
         .catch((error) => {
             console.error('Error:', error.message);
             formError.textContent = error.message

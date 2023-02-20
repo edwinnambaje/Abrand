@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <head>
-    <title>SIGNIN</title>
+    <title>SignUp</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -34,17 +34,20 @@
     <div class="main">  	
 	
             <form  id="form_login" method="post" name="form">
-                <label>Signin</label>
+                <label>Signup</label>
+                <input type="text" id="input_email" name="username" placeholder="username" class="username" >
+                <div class="email_error"></div>
                 <input type="text" id="input_email" name="email" placeholder="email" class="username" >
                 <div class="email_error"></div>
                 <input type="password" id="input_password" name="password" placeholder="Password" class="pass password" >
                 <div class="password_error"></div>
                 <div class="form_error"></div>
-                <button type="submit" class="button">Signin</button>    
+                <button type="submit" class="button">Signup</button>
+                <p>Already have an account? <a href="./signin.html">Login</a></p>  
             </form>
     
     </div>
-    <script src="./../js/sign-in-validation.js"></script>
+    <script src="./../js/signup.js"></script>
     <script src="./../js/sweetalert.js"></script>
 </body>
 </html>

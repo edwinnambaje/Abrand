@@ -14,14 +14,15 @@ if(!isLoggedIn && !accessToken){
     })
     .then(response => response.json())
     .then((data) => {
+        console.log(data)
         result = data
+        console.log(result)
             let tbody= document.querySelector('tbody')
             for(let i=0;i<result.length;i++){
             let d1 = document.createElement("td")
             let d2 = document.createElement("td")
             let d3 = document.createElement("td")
             let deleteicon=document.createElement('i')
-            const editicon=document.createElement('i')
             d1.innerText = result[i].username;
             d2.innerText = result[i].email;
             deleteicon.setAttribute('class','ri-delete-bin-line delete')
