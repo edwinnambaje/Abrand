@@ -74,7 +74,10 @@ document.querySelector('#form_login').addEventListener('submit', (e) => {
                         'Invalid credentials!',
                         'error'
                     );
-                    location.reload()
+                    setTimeout(()=>{
+                        location.reload()
+                        },4000)
+                    
                 }
             })
         .catch((error) => {
