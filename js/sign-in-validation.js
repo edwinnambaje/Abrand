@@ -74,6 +74,7 @@ document.querySelector('#form_login').addEventListener('submit', (e) => {
                         'Invalid credentials!',
                         'error'
                     );
+                    location.reload()
                 }
             })
         .catch((error) => {
