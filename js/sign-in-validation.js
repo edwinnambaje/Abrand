@@ -41,6 +41,7 @@ document.querySelector('#form_login').addEventListener('submit', (e) => {
                 const accessToken = data.token; 
                 console.log(accessToken)
                 console.log(data)
+                if(data.data.password ===loginData.password && data.data.email === loginData.email){
                 if(data.data.role === "admin"){
                 localStorage.setItem('mora', JSON.stringify(accessToken))
                 localStorage.setItem("isLoggedIn", JSON.stringify(true))
@@ -68,6 +69,14 @@ document.querySelector('#form_login').addEventListener('submit', (e) => {
                         alert(data.error)
                         location.reload()
                  }
+                }
+                else{
+                    Swal.fire(
+                        'Opps..!',
+                        'Invalid credentials!',
+                        'error'
+                    );
+                }
             })
         .catch((error) => {
             console.error('Error:', error.message);
