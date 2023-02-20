@@ -39,7 +39,7 @@ document.querySelector('#form_login').addEventListener('submit', (e) => {
         .then((response) => response.json())
         .then((data) => {
                 const accessToken = data.token; 
-                if(data.data.password ===loginData.password && data.data.email === loginData.email){
+                if(data.status ==="success"){
                 if(data.data.role === "admin"){
                 localStorage.setItem('mora', JSON.stringify(accessToken))
                 localStorage.setItem("isLoggedIn", JSON.stringify(true))
